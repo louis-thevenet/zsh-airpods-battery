@@ -1,0 +1,10 @@
+[Unit]
+Description=AirPods Battery Fetcher for zsh plugin
+
+[Service]
+ExecStart=/usr/bin/python3 /PATH/TO/AirStatus/main.py /tmp/airpods_battery.out
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=default.target

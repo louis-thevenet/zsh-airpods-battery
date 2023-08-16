@@ -75,7 +75,7 @@ def process_hexa(data_hexa):
     )
 
 async def main():
-    with open('battery_data', 'w') as writer:
+    with open("/tmp/airpods_battery.out", 'w+') as writer:
         while True:
             res=await get_data()
             writer.seek(0)
