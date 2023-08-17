@@ -1,8 +1,8 @@
 [Unit]
-Description=AirPods Battery Fetcher for zsh plugin
+Description=AirPods Battery Fetcher for zsh plugin zsh-airpods-battery
 
 [Service]
-ExecStart=/usr/bin/python3 /PATH/TO/AirStatus/main.py /tmp/airpods_battery.out
+ExecStart=/usr/bin/python3 /PATH/TO/fetch_airpods_battery.py /tmp/airpods_battery.out
 Restart=always
 RestartSec=3
 
