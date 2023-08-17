@@ -6,9 +6,15 @@ Because of Apple's decisions toward non Apple devices interacting with airpods, 
 
 ![image](https://github.com/A-delta/zsh-airpods-battery/assets/55986107/30f964b5-6085-4760-9a74-14148942cd49)
 
-## Installation
-### Zsh plugin
-###  Python script
+## Zsh plugin installation
+
+### With oh-my-zsh
+```
+git clone https://github.com/A-delta/zsh-airpods-battery.git ~/.oh-my-zsh/custom/plugins/airpods-battery
+```
+And add `airpods-battery` to `plugins` in `.zshrc`.
+
+##  Python script installation
 
 You can run simply the script `python3 fetch_airpods_battery.py` or you can make it more permanent by installing it as a service.
 
