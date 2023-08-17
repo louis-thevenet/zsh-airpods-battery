@@ -53,8 +53,11 @@ def get_battery_from_data(data_hexa):
     charging_left:bool = (charging_status & (0b00000010 if flip else 0b00000001)) != 0
     charging_right:bool = (charging_status & (0b00000001 if flip else 0b00000010)) != 0
     charging_case:bool = (charging_status & 0b00000100) != 0
-
-    return "L:"+add_color_zsh_prompt(left_status)+'⚡ 'if charging_left else ' '+ "R:"+add_color_zsh_prompt(right_status)+'⚡ 'if charging_right else ' '+"C:"+add_color_zsh_prompt(case_status)+'⚡'if charging_left else ''
+    res= "L:"+add_color_zsh_prompt(left_status)+' '+"R:"+add_color_zsh_prompt(right_status)
+    if case_status != '🚫':
+        res+=' '+"C:"+add_color_zsh_prompt(case_status)
+    return res
+    #return "L:"+add_color_zsh_prompt(left_status)+'⚡ 'if charging_left else ' '+ "R:"+add_color_zsh_prompt(right_status)+'⚡ 'if charging_right else ' '+"C:"+add_color_zsh_prompt(case_status)+'⚡'if charging_left else ''
 
 async def main():
     with open("/tmp/airpods_battery.out", 'w+') as writer:
