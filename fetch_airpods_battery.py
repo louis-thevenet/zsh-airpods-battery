@@ -40,23 +40,24 @@ def get_battery_from_data(data_hexa):
 
     # 0-10 : battery, 15 : disconnected
     status_tmp = int("" + chr(data_hexa[12 if flip else 13]), 16)
-    left_status = (100 if status_tmp == 10 else (status_tmp * 10 + 5 if status_tmp <= 10 else '🚫'))
+    left_status = (100 if status_tmp == 10 else (status_tmp * 10 + 5 if status_tmp <= 10 else ''))
 
 
     status_tmp = int("" + chr(data_hexa[13 if flip else 12]), 16)
-    right_status = (100 if status_tmp == 10 else (status_tmp * 10 + 5 if status_tmp <= 10 else '🚫'))
+    right_status = (100 if status_tmp == 10 else (status_tmp * 10 + 5 if status_tmp <= 10 else ''))
 
     status_tmp = int("" + chr(data_hexa[15]), 16)
-    case_status = (100 if status_tmp == 10 else (status_tmp  * 10 + 5 if status_tmp <= 10 else '🚫'))
+    case_status = (100 if status_tmp == 10 else (status_tmp  * 10 + 5 if status_tmp <= 10 else ''))
 
     charging_status = int("" + chr(data_hexa[14]), 16)
     charging_left:bool = (charging_status & (0b00000010 if flip else 0b00000001)) != 0
     charging_right:bool = (charging_status & (0b00000001 if flip else 0b00000010)) != 0
     charging_case:bool = (charging_status & 0b00000100) != 0
 
-    res= "L:"+add_color_zsh_prompt(left_status)+' '+"R:"+add_color_zsh_prompt(right_status)
-    if case_status != '🚫':
-        res+=' '+"C:"+add_color_zsh_prompt(case_status)
+    res = "L:"+add_color_zsh_prompt(left_status)+' ' if left_status!='' else ''
+    res += "R:"+add_color_zsh_prompt(right_status)+' ' if right_status!='' else ''
+    res += "C:"+add_color_zsh_prompt(case_status)+' ' if case_status!='' else ''
+
     return res
 
 async def main():
