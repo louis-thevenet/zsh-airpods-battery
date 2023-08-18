@@ -5,6 +5,7 @@ It is probably not compatible with powerlevel9k or anything that uses the RPROMP
 Because of Apple's decisions toward non Apple devices interacting with airpods, fetched values go from 0 to 10 resulting in a &pm;5% precision. 
 
 ![image](https://github.com/A-delta/zsh-airpods-battery/assets/55986107/30f964b5-6085-4760-9a74-14148942cd49)
+![image](https://github.com/A-delta/zsh-airpods-battery/assets/55986107/0d665959-9018-4782-85d2-73abd167c081)
 
 ## Zsh plugin installation
 
