@@ -19,7 +19,7 @@ And add `airpods-battery` to `plugins` in `.zshrc`.
 
 You can simply run the script via `python3 fetch_airpods_battery.py` or you can install it as a service:
 
-Edit the `airpods-battery-fetcher.service` service file template:
+Edit the following `airpods-battery-fetcher.service` service file template:
 ```
 [Unit]
 Description=AirPods Battery Fetcher for zsh plugin zsh-airpods-battery
@@ -33,18 +33,17 @@ RestartSec=3
 WantedBy=default.target
 ```
 
-Create service file from template:
+Move the service file to correct location:
 ```
 sudo mv airpods-battery-fetcher.service /etc/systemd/system/airpods-battery-fetcher.service
+```
+Start service:
+```
+sudo systemctl start airpods-battery-fetcher
 ```
 
 Enable service on boot:
 ```
 sudo systemctl start airpods-battery-fetcher.service
-```
-
-Start service:
-```
-sudo systemctl start airpods-battery-fetcher
 ```
 
