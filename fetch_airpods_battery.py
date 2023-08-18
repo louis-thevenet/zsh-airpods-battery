@@ -28,7 +28,7 @@ def add_color_zsh_prompt(status):
         return f"%{{$fg[red]%}}{status}%{{$reset_color%}}"
 
     elif status < 50:
-        return f"%{{$fg[orange]%}}{status}%{{$reset_color%}}"
+        return f"${{FG[202]}}{status}%{{$reset_color%}}"
 
     elif status < 75:
         return f"%{{$fg[yellow]%}}{status}%{{$reset_color%}}"
