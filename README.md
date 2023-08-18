@@ -36,15 +36,15 @@ WantedBy=default.target
 
 Move the service file to correct location:
 ```
-sudo mv airpods-battery-fetcher.service /etc/systemd/system/airpods-battery-fetcher.service
+mv airpods-battery-fetcher.service /etc/systemd/user/airpods-battery-fetcher.service
 ```
 Start service:
 ```
-sudo systemctl start airpods-battery-fetcher
+systemctl --user start airpods-battery-fetcher.service
 ```
 
 Enable service on boot:
 ```
-sudo systemctl start airpods-battery-fetcher.service
+systemctl --user enable airpods-battery-fetcher.service
 ```
 
