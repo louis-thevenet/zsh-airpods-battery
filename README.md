@@ -1,10 +1,11 @@
 # zsh-airpods-battery
+
 Zsh plugin that looks for Airpods via bluetooth and displays their battery in RPROMPT. The plugin is mainly for personnal use although I provided some installation information. \
 It is probably not compatible with powerlevel9k or anything that uses the RPROMPT variable.
 
-Because of Apple's decisions toward non Apple devices interacting with airpods, fetched values go from 0 to 10 resulting in a &pm;5% precision. 
+Because of Apple's decisions toward non Apple devices interacting with airpods, fetched values go from 0 to 10 resulting in a &pm;5% precision.
 
-![image](https://github.com/A-delta/zsh-airpods-battery/assets/55986107/30f964b5-6085-4760-9a74-14148942cd49)
+![image](https://github.com/A-delta/zsh-airpods-battery/assets/55986107/d378fe21-a24a-4725-b971-098d2bfc925a)
 ![image](https://github.com/A-delta/zsh-airpods-battery/assets/55986107/0d665959-9018-4782-85d2-73abd167c081)
 
 ## Zsh plugin installation
