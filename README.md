@@ -48,3 +48,7 @@ Enable service on boot:
 systemctl --user enable airpods-battery-fetcher.service
 ```
 
+If service fails, you may have to create the dump file :
+```
+touch /tmp/airpods_battery.out
+```
